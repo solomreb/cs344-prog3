@@ -1,3 +1,6 @@
+// based on http://stephen-brennan.com/2015/01/16/write-a-shell-in-c/
+
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -50,7 +53,7 @@ int lsh_exec(char **args){
 	int status;
 	
 	pid = fork();	//copy of current process made
-	if (pid == 0) {		//child process
+	if (pid == 0) {	n	//child process
 		if (execvp(args[0], args) == -1) {	
 			perror("lsh");
 		}
